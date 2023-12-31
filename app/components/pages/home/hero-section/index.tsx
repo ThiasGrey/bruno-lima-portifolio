@@ -74,7 +74,7 @@ export const HeroSection = () => {
           height={404}
           src="/images/profile-pic.png"
           alt="Foto de perfil do Bruno Mathias"
-          className="w-[300px] h-[300px] lg:w-[420px] lg:h-[404-px] bm-6 lg:mb-0 shadow-2xl rounded-lg object-cover"
+          className="w-[300px] h-[300px] lg:w-[420px] lg:h-[404-px] mb-6 lg:mb-0 shadow-2xl rounded-lg object-cover"
         />
       </div>
     </section>
