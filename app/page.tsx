@@ -2,15 +2,16 @@ import { HeroSection } from "./components/pages/home/hero-section";
 import { HigliightedProjects } from "./components/pages/home/higlighted-projects";
 import { Knowtechs } from "./components/pages/home/know-techs";
 import { WorkExperience } from "./components/pages/home/work-experience";
+import { HomePageData } from "./types/page-info";
 import { fetchHygraphQuery } from "./utils/fetch-hygraph-query";
 
-const getPageData = async () => {
+const getPageData = async (): Promise<HomePageData> => {
   const query = `
-    query PageInfoQuery {
-      page(where: {slug: "home"}) {
-        introduction {
-          raw
-        }
+  query MyQuery {
+    page(where: {slug: "home"}) {
+      introduction {
+        raw
+      }
       technologies {
         name
       }
@@ -21,24 +22,23 @@ const getPageData = async () => {
         url
         iconSvg
       }
-      knownTechs {
-        iconSvg
+      knowTechs {
         name
         startDate
+        iconSvg
       }
-      
     }
-    
   }
-`
+  
+  `;
+
   return fetchHygraphQuery(query);
 };
 
 export default async function Home() {
-  
-  const response = await getPageData();
+  const { page } = await getPageData();
 
-  console.log(response);
+  console.log(page);
 
   return (
     <>
