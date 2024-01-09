@@ -32,17 +32,18 @@ const getPageData = async (): Promise<HomePageData> => {
   
   `;
 
-  return fetchHygraphQuery(query);
+  return fetchHygraphQuery(
+    query,
+    60 * 60 * 24 //24 horas
+  );
 };
 
 export default async function Home() {
   const { page: pageData } = await getPageData();
 
-  
-
   return (
     <>
-      <HeroSection homeInfo={pageData}/>
+      <HeroSection homeInfo={pageData} />
       <Knowtechs />
       <HigliightedProjects />
       <WorkExperience />

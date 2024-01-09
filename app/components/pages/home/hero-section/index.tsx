@@ -7,31 +7,8 @@ import { TechBadge } from "@/app/components/tech-badge";
 import { HomePageInfo } from "@/app/types/page-info";
 import Image from "next/image";
 import { HiArrowNarrowRight } from "react-icons/hi";
-import {
-  TbBrandGithub,
-  TbBrandLinkedin,
-  TbBrandWhatsapp,
-  TbBrandYoutube,
-} from "react-icons/tb";
 
-const MOCK_CONTACTS = [
-  {
-    url: "https://github.com.br",
-    icon: <TbBrandGithub />,
-  },
-  {
-    url: "https://linkedin.com.br",
-    icon: <TbBrandLinkedin />,
-  },
-  {
-    url: "https://youtube.com.br",
-    icon: <TbBrandYoutube />,
-  },
-  {
-    url: "https://whatsapp.com.br",
-    icon: <TbBrandWhatsapp />,
-  },
-];
+
 
 type HomeSectionProps = {
   homeInfo: HomePageInfo
@@ -93,7 +70,7 @@ export const HeroSection = ({homeInfo}: HomeSectionProps) => {
         <Image
           width={420}
           height={404}
-          src="/images/profile-pic.png"
+          src={homeInfo.profilePicture.url}
           alt="Foto de perfil do Bruno Mathias"
           className="w-[300px] h-[300px] lg:w-[420px] lg:h-[404-px] mb-6 lg:mb-0 shadow-2xl rounded-lg object-cover"
         />
