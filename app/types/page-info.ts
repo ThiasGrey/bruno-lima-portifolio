@@ -3,7 +3,7 @@ import { KnowTech } from "./projects";
 
 export type Social = {
     url: string;
-    icon: string;
+    iconSvg: string;
 }
 
 export type HomePageInfo = {

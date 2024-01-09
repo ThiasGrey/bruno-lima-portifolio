@@ -1,6 +1,7 @@
 'use client'
 
 import { Button } from "@/app/components/button";
+import { CMSIcon } from "@/app/components/cms-icon";
 import { RichText } from "@/app/components/rich-text";
 import { TechBadge } from "@/app/components/tech-badge";
 import { HomePageInfo } from "@/app/types/page-info";
@@ -58,11 +59,11 @@ export const HeroSection = ({homeInfo}: HomeSectionProps) => {
 
           <div className="flex flex-wrap gap-x-2 gap-y-3 lg:max-w-[340px]">
             
-              <TechBadge name="Next.js" />
-              <TechBadge name="Next.js" />
-              <TechBadge name="Next.js" />
-              <TechBadge name="Next.js" />
-              <TechBadge name="Next.js" />
+              {
+                homeInfo.technologies.map((tech, index) => (
+                  <TechBadge name={tech.name} key={`contact-${index}`}/>
+                ))
+              }
             
           </div>
 
@@ -73,14 +74,16 @@ export const HeroSection = ({homeInfo}: HomeSectionProps) => {
             </Button>
 
             <div className="text-2xl text-grey-600 flex items-center h-20 gap-3">
-              {MOCK_CONTACTS.map((contact, index) => (
+              {homeInfo.socials.map((contact, index) => (
                 <a
                   href={contact.url}
                   key={`contact-${index}`}
                   target="_blank"
                   className="hover:text-gray-100 transition-colors"
                 >
-                  {contact.icon}
+                  <CMSIcon icon={contact.iconSvg}/>
+                 
+                  
                 </a>
               ))}
             </div>
