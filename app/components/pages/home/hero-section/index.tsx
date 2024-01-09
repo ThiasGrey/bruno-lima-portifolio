@@ -1,7 +1,9 @@
 'use client'
 
 import { Button } from "@/app/components/button";
+import { RichText } from "@/app/components/rich-text";
 import { TechBadge } from "@/app/components/tech-badge";
+import { HomePageInfo } from "@/app/types/page-info";
 import Image from "next/image";
 import { HiArrowNarrowRight } from "react-icons/hi";
 import {
@@ -30,7 +32,11 @@ const MOCK_CONTACTS = [
   },
 ];
 
-export const HeroSection = () => {
+type HomeSectionProps = {
+  homeInfo: HomePageInfo
+}
+
+export const HeroSection = ({homeInfo}: HomeSectionProps) => {
 
   const HandleContact = () => {
     const contactSection = document.querySelector('#contact');
@@ -46,11 +52,9 @@ export const HeroSection = () => {
           <p className="font-mono text-emerald-400">Olá, meu nome é</p>
           <h2 className="text-4xl font-medium mt-1">Bruno Mathias</h2>
 
-          <p className="text-grey-400 my-6 text-sm sm:text-base">
-            Sou um Desenvolvedor Web que adora criar coisas incríveis online.
-            Trabalho principalmente com JavaScript e TypeScript, construindo
-            sites e aplicativos web
-          </p>
+          <div className="text-grey-400 my-6 text-sm sm:text-base">
+            <RichText content={homeInfo.introduction.raw} />
+          </div>
 
           <div className="flex flex-wrap gap-x-2 gap-y-3 lg:max-w-[340px]">
             
