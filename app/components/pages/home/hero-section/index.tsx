@@ -38,7 +38,7 @@ export const HeroSection = ({ homeInfo }: HomeSectionProps) => {
             <RichText content={homeInfo.introduction.raw} />
           </div>
 
-          <div className="flex flFx-wrap gap-x-2 gap-y-3 lg:max-w-[340px]">
+          <div className="flex flex-wrap gap-x-2 gap-y-3 lg:max-w-[340px]">
             {homeInfo.technologies.map((tech, i) => (
               <TechBadge
                 name={tech.name}
