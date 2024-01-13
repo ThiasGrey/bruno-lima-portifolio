@@ -53,18 +53,18 @@ export const ContactForm = () => {
         >
           <input
             placeholder="Nome"
-            className="w-full h-14 p-4 bg-gray-800 rounded-lg placeholder:text-gray-400 placeholder:text-sm text-gray-50 focus:outline-none focus:ring-2 ring-emerald-600"
+            className="w-full h-14 p-4 bg-gray-800 rounded-lg placeholder:text-gray-400 placeholder:text-sm text-gray-50 focus:outline-none focus:ring-2 ring-cyan-600"
             {...register("name")}
           />
           <input
             placeholder="E-mail"
             type="email"
-            className="w-full h-14 p-4 bg-gray-800 rounded-lg placeholder:text-gray-400 placeholder:text-sm text-gray-50 focus:outline-none focus:ring-2 ring-emerald-600"
+            className="w-full h-14 p-4 bg-gray-800 rounded-lg placeholder:text-gray-400 placeholder:text-sm text-gray-50 focus:outline-none focus:ring-2 ring-cyan-600"
             {...register("email")}
           />
           <textarea
             placeholder="Mensagem"
-            className="resize-none w-full h-138 p-4 bg-gray-800 rounded-lg placeholder:text-gray-400 placeholder:text-sm text-gray-50 focus:outline-none focus:ring-2 ring-emerald-600"
+            className="resize-none w-full h-138 p-4 bg-gray-800 rounded-lg placeholder:text-gray-400 placeholder:text-sm text-gray-50 focus:outline-none focus:ring-2 ring-cyan-600"
             maxLength={500}
             {...register("message")}
           />

@@ -9,7 +9,7 @@ import { Toaster } from './components/toaster'
 
 export const metadata = {
   title:  {
-    default: 'Home',
+    default: 'Bruno M. | DEV',
     template: '%s | BM Dev',
   },
   icons: [
