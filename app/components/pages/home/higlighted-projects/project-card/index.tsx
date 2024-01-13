@@ -1,38 +1,33 @@
-'use client'
+"use client";
 
 import { Link } from "@/app/components/link";
 import { TechBadge } from "@/app/components/tech-badge";
+import { fadeUpAnimation, techBadgeAnimation } from "@/app/lib/animations";
 import { Project } from "@/app/types/projects";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { HiArrowNarrowRight } from "react-icons/hi";
 
 type ProjectCardProps = {
-  project: Project
-}
+  project: Project;
+};
 
 export const ProjectCard = ({ project }: ProjectCardProps) => {
 
-  const animeProps = {
-    initial: { opacity: 0, y: 50 },
-    whileInView: { opacity: 1, y: 0 },
-    exit: { opacity: 0, y: 50 },
-  }
-
   return (
-    <motion.div className="flex gap-6 lg:gap-12 flex-col lg:flex-row"
+    <motion.div
+      className="flex gap-6 lg:gap-12 flex-col lg:flex-row"
       initial={{ opacity: 0, y: 100 }}
       whileInView={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 100 }}
       transition={{ duration: 0.5 }}
     >
-      <motion.div 
+      <motion.div
         className="w-full h-[200px] sm:h-[300px] lg:w-[420px] lg:min-h-full"
         initial={{ opacity: 0, y: 100, scale: 0.5 }}
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
         exit={{ opacity: 0, y: 100, scale: 0.5 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-
       >
         <Image
           width={420}
@@ -44,9 +39,10 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
       </motion.div>
 
       <div className="flex-1 lg:py-[18px]">
-        <motion.h3 className="flex items-center gap-3 font-medium text-lg text-gray-50"
-          {...animeProps}
-          transition={{ duration: 0.7}}
+        <motion.h3
+          className="flex items-center gap-3 font-medium text-lg text-gray-50"
+          {...fadeUpAnimation}
+          transition={{ duration: 0.7 }}
         >
           <Image
             width={20}
@@ -57,22 +53,26 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
           {project.title}
         </motion.h3>
 
-        <motion.p className="text-gray-400 my-6" {...animeProps} transition={{duration: 0.2, delay: 0.3}}>
+        <motion.p
+          className="text-gray-400 my-6"
+          {...fadeUpAnimation}
+          transition={{ duration: 0.2, delay: 0.3 }}
+        >
           {project.shortDescription}
         </motion.p>
 
         <div className="flex flex-wrap gap-x-2 gap-y-3 bm-8 lg:max-w-[350px]">
           {project.technologies.map((tech, i) => (
-            <TechBadge key={`${project.title}-tech-${tech.name}`} name={tech.name} 
-              initial={{ opacity: 0, scale: 0 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0 }}
+            <TechBadge
+              key={`${project.title}-tech-${tech.name}`}
+              name={tech.name}
+              {...techBadgeAnimation}
               transition={{ duration: 0.2, delay: 0.5 + i * 0.1 }}
             />
           ))}
         </div>
 
-        <Link href={`/projects/${project.slug}`} >
+        <Link href={`/projects/${project.slug}`}>
           Ver Projeto
           <HiArrowNarrowRight />
         </Link>
