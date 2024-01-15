@@ -14,9 +14,21 @@ export const metadata = {
   },
   icons: [
     {
-      url: '/favicon.ico',
+      url: '/favicon.svg',
     }
   ],
+    description: 'Bruno M. | DEV - Desenvolvedor Front-end e UI Designer',
+    openGraph: {
+      images: [
+        {
+          url: '/images/og-image.png',
+          width: 1200,
+          height: 630,
+          
+        },
+      ],
+    },
+  
 }
 
 const inter = Inter({
