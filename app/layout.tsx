@@ -17,7 +17,7 @@ export const metadata = {
       url: '/favicon.svg',
     }
   ],
-    description: 'Bruno M. | DEV - Desenvolvedor Front-end e UI Designer',
+    description: 'Bruno M. | Desenvolvedor Front-end e UI Designer',
     openGraph: {
       images: [
         {
@@ -28,6 +28,7 @@ export const metadata = {
         },
       ],
     },
+    
   
 }
 
