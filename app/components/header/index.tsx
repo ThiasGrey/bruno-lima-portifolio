@@ -19,6 +19,14 @@ const NAV_ITEMS = [
 ]
 
 export const Header = () => {
+
+    const HandleContact = () => {
+        const contactSection = document.querySelector("#contact");
+        if (contactSection) {
+          contactSection.scrollIntoView({ behavior: "smooth" });
+        }
+      };
+
     return(
         <motion.header className="absolute top-0 w-full z-10 h-24 flex items-center justify-center"
             initial={{ top: -100 }}
@@ -39,6 +47,8 @@ export const Header = () => {
                     {NAV_ITEMS.map(item => (
                         <NavItem {...item} key={item.label} />
                     ))}
+                    <button className="text-grey-400 flex items-center gap-2 font-medium font-mono w-max" onClick={HandleContact}>
+                    <span className="text-cyan-400">#</span> Entre em contato </button>
                     
                 </nav>
             </div>
