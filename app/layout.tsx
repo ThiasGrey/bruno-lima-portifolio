@@ -6,6 +6,8 @@ import { ContactForm } from './components/contact-form'
 import { Footer } from './components/footer'
 import { BackToTop } from './components/back-to-top'
 import { Toaster } from './components/toaster'
+import { SpeedInsights } from '@vercel/speed-insights/next';
+
 
 export const metadata = {
   title:  {
@@ -53,6 +55,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         {children}
         <ContactForm />
         <Footer />
+         <SpeedInsights />
       </body>
     </html>
   )
