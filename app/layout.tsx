@@ -21,6 +21,10 @@ export const metadata = {
   ],
   description: "Bruno M. | Desenvolvedor Front-end e UI Designer",
   openGraph: {
+    title: "Bruno M. | DEV",
+    description: 'The Bruno Portifólio for the Web',
+    url: 'https://brunomathias.dev',
+    siteName: 'Bruno M. | DEV',
     images: [
       {
         url: "/images/og-image.png",
@@ -28,6 +32,8 @@ export const metadata = {
         height: 630,
       },
     ],
+    locale: 'pt_BR',
+    type: 'website'
   },
 };
 
