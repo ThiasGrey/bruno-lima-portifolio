@@ -25,13 +25,6 @@ export const metadata = {
     description: 'The Bruno Portifólio for the Web',
     url: 'https://brunomathias.dev',
     siteName: 'Bruno M. | DEV',
-    images: [
-      {
-        url: "/images/og-image.png",
-        width: 1200,
-        height: 630,
-      },
-    ],
     locale: 'pt_BR',
     type: 'website'
   },
